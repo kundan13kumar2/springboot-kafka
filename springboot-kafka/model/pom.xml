@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.springboot</groupId>
 		<artifactId>springboot-kafka</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>springboot-kafka.model</artifactId>
 	<packaging>jar</packaging>

@@ -1,9 +1,9 @@
 /*
-package com.springboot.consumer.retry;
 
-import com.springboot.ProducerProperties;
-import com.springboot.MessageProducer;
-import com.springboot.config.KafkaProducerConfig;
+package com.springboot.producer.retry;
+
+import com.springboot.producer.dto.ProducerProperties;
+import com.springboot.producer.MessageProducer;
 import org.apache.kafka.clients.consumer.OffsetAndMetadata;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class MessageProducerImpl implements MessageProducer {
+public class MessageProducerImpl {
 
     private static final Logger logger = LoggerFactory.getLogger(MessageProducerImpl.class);
 
@@ -29,7 +29,7 @@ public class MessageProducerImpl implements MessageProducer {
     private static List<String> begunTxnIds = new ArrayList<>();
 
     @Autowired
-    private KafkaProducerConfig producerConfig;
+    private ProducerConfig producerConfig;
 
     @Override
     public void sendMessage(String topic, Object message, ProducerProperties properties) {
@@ -77,4 +77,5 @@ public class MessageProducerImpl implements MessageProducer {
     }
 
 }
+
 */

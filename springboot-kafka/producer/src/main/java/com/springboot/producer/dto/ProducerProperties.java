@@ -1,4 +1,4 @@
-package com.springboot.dto;
+package com.springboot.producer.dto;
 
 import lombok.Getter;
 
@@ -17,6 +17,7 @@ public class ProducerProperties {
     private final int retryCounts;
     private final long retryInterval;
     private final String idempotence;
+    private final long transactionTimeout;
 
     public static class Builder {
         // Required parameters
@@ -31,6 +32,8 @@ public class ProducerProperties {
         private ProducerTypeEnum producerTypeEnum = ProducerTypeEnum.SYNC;
         private int retryCounts = 3;
         private long retryInterval = 100;
+        private long transactionTimeout = 60000;
+
 
         public Builder(List<String> brokerConfig) {
             this.brokerConfig = brokerConfig;
@@ -41,6 +44,12 @@ public class ProducerProperties {
             this.txnId = txnId;
             this.idempotence = idempotence;
         }
+
+        public Builder transactionTimeout(long transactionTimeout) {
+            this.transactionTimeout = transactionTimeout;
+            return this;
+        }
+
 
         public Builder txnId(String txnId) {
             this.txnId = txnId;
@@ -91,5 +100,6 @@ public class ProducerProperties {
         producerTypeEnum = builder.producerTypeEnum;
         retryCounts = builder.retryCounts;
         retryInterval = builder.retryInterval;
+        transactionTimeout = builder.transactionTimeout;
     }
 }

@@ -1,9 +1,14 @@
-package com.springboot;
+package com.springboot.consumer;
 
-import com.springboot.dto.ConsumerProperties;
+import com.springboot.consumer.dto.ConsumerProperties;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.util.List;
 
 public interface KafkaConsumeRecords {
-    public List<Object> pollRecords(ConsumerProperties properties);
+
+    public void poll(ConsumerProperties properties, ThreadPoolTaskExecutor threadPool, final ProcessCallback callback);
+
+    public void retry(ConsumerProperties properties, String message);
+
 }

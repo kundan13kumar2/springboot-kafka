@@ -1,4 +1,4 @@
-package com.springboot.dto;
+package com.springboot.producer.dto;
 
 import lombok.Getter;
 

@@ -51,4 +51,15 @@ public class Student implements Serializable {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
+	@Override
+	public String toString() {
+		return "Student{" +
+				"studentId='" + studentId + '\'' +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", age='" + age + '\'' +
+				", address=" + address +
+				'}';
+	}
 }

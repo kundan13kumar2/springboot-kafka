@@ -1,11 +1,16 @@
-package com.springboot;
+package com.springboot.producer;
 
-import com.springboot.dto.ProducerProperties;
+import com.springboot.producer.dto.ProducerProperties;
 
 public interface MessageProducer {
 
-    public void sendNormalMessage(String topic, Object message, ProducerProperties properties);
 
-    public void sendTxnMessage(String topic, Object message, ProducerProperties properties, boolean isCommit);
+    public void sendMessage(String topic, String message, ProducerProperties properties);
+
+    public void sendTxnMessage(String topic, String message, boolean isCommit, ProducerProperties properties);
+
+    public void sendMessageSpring(String topic, String message);
+
+    public void sendTxnMessageSpring(String topic, String message);
 
 }

@@ -1,6 +1,9 @@
 package com.paytm.topic;
 
-public interface KafkaTopicConfig {
+public interface KafkaTopicDefine {
     public void createTopic();
-    public 
+
+    public void modifyTopic();
+
+    public void deleteTopic();
 }

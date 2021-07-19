@@ -1,2 +1,4 @@
-package com.paytm.topic.kafka;public class KafkaProperties {
+package com.paytm.topic.kafka;
+
+public class KafkaProperties {
 }
