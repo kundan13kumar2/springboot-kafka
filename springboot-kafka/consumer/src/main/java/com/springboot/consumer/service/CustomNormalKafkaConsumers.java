@@ -18,7 +18,7 @@ public class CustomNormalKafkaConsumers {
 
     @KafkaListener(topics = "#{'${spring.kafka.topics}'.split(',')}", groupId = "#{'${spring.kafka.consumer.group-id}'}", containerFactory = "kafkaListenerContainerFactory")
     public void consumeRecordsTxn(ConsumerRecord<String, String> record, Acknowledgment ack) {
-
+        System.out.println("Current time consumer : " + System.currentTimeMillis());
         String json = record.value().toString();
         logger.info("Consuming message {}", json);
         ack.acknowledge();
